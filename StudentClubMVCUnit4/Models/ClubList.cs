@@ -28,5 +28,13 @@ namespace StudentClubMVCUnit4.Models
         {
             return clubs[index];
         }
+
+        public ClubModel AddNewClub(string name, int id, int capacity, string description, string president)
+        {
+            List<ClubModel> newClub = new List<ClubModel>();
+            newClub.Add(new ClubModel(name, id, capacity, description, president));
+
+            return ;
+        }
     }
 }

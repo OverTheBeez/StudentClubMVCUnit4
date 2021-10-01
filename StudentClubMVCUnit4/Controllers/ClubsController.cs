@@ -24,22 +24,29 @@ namespace StudentClubMVCUnit4.Controllers
             return View("Details", allClubs.getOneClub(id));
         }
 
-        // GET: Clubs/Create
+        // GET: StudentController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Clubs/Create
+        // POST: StudentController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
         {
-
-            if (ModelState.IsValid) { 
-            }
             try
             {
+                //return RedirectToAction(nameof(Index));
+                // Retrieve form data using form collection
+                String ClubName = collection["Name"];
+                int ClubIDNumber = Int32.Parse(collection["Id"]);
+                int ClubCapacity = Int32.Parse(collection["Capacity"]);
+                String ClubDescription = collection["Description"];
+                String ClubPresident = collection["President"];
+                
+                ///ClubModel newClub = new ClubModel(ClubName, ClubIDNumber, ClubCapacity, ClubDescription, ClubPresident);
+                allClubs.AddNewClub(ClubName, ClubIDNumber, ClubCapacity, ClubDescription, ClubPresident);
                 return RedirectToAction(nameof(Index));
             }
             catch
