@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using StudentClubMVCUnit4.Models;
+using System.Diagnostics;
 
 namespace StudentClubMVCUnit4.Controllers
 {
@@ -39,18 +40,21 @@ namespace StudentClubMVCUnit4.Controllers
             {
                 //return RedirectToAction(nameof(Index));
                 // Retrieve form data using form collection
-                String ClubName = collection["Name"];
-                int ClubIDNumber = Int32.Parse(collection["Id"]);
-                int ClubCapacity = Int32.Parse(collection["Capacity"]);
-                String ClubDescription = collection["Description"];
-                String ClubPresident = collection["President"];
+                String ClubName = collection["ClubName"];
+                int ClubIDNumber = Int32.Parse(collection["ClubIDNumber"]);
+                int ClubCapacity = Int32.Parse(collection["ClubCapacity"]);
+                String ClubDescription = collection["ClubDescription"];
+                String ClubPresident = collection["ClubPresident"];
                 
                 ///ClubModel newClub = new ClubModel(ClubName, ClubIDNumber, ClubCapacity, ClubDescription, ClubPresident);
+                
                 allClubs.AddNewClub(ClubName, ClubIDNumber, ClubCapacity, ClubDescription, ClubPresident);
+                Debug.WriteLine("TEG", "ClubsController Made It");
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
+                Debug.WriteLine("TEG", "ClubsController Create ERROR Catch");
                 return View();
             }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fYwVX57ZI6mcGSCBCfvEgaqNFHA737eKzO4a2w/HahG5HNu6cCSNIE5USrLRtJKD0Slx9XXUEbCDqLwOd8KsLA==",
+  "dgSpecHash": "LVkd6IUnRChWENhMB2ds2bqlRfFWLJK56n3HMsWTjUeVNU3z1Aju0jK+sOCnaY+cQjXqrExGDmz9Pr+ordeZiw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\overt\\Documents\\GitHub\\StudentClubMVCUnit4\\StudentClubMVCUnit4\\StudentClubMVCUnit4.csproj",
+  "projectFilePath": "C:\\Users\\overt\\Source\\Repos\\StudentClubMVCUnit4\\StudentClubMVCUnit4\\StudentClubMVCUnit4.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\overt\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\overt\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

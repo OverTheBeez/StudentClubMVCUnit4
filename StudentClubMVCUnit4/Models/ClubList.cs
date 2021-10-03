@@ -7,16 +7,19 @@ namespace StudentClubMVCUnit4.Models
 {
     public class ClubList
     {
-        List<ClubModel> clubs = new List<ClubModel>();
+        static List<ClubModel> clubs = new List<ClubModel>();
 
         public ClubList()
         {
-            clubs.Add(new ClubModel("Video Game Club", 459, 20, "Club for video game lovers.", "Mario"));
-            clubs.Add(new ClubModel("Coding Club", 111, 35, "Club for programmers to practice coding.", "Bruce"));
-            clubs.Add(new ClubModel("Politics Club", 639, 12, "Club for individuals to talk about current politics.", "Sorin"));
-            clubs.Add(new ClubModel("Travel Club", 032, 50, "Club for those who love to travel.", "Jen"));
-            clubs.Add(new ClubModel("Sports Club", 322, 45, "Club to talk everything sports.", "Sharon"));
-            clubs.Add(new ClubModel("Comedy Club", 509, 80, "Club to share some laughs", "Mack"));
+            if (clubs.Count == 0)
+            {
+                clubs.Add(new ClubModel("Video Game Club", 459, 20, "Club for video game lovers.", "Mario"));
+                clubs.Add(new ClubModel("Coding Club", 111, 35, "Club for programmers to practice coding.", "Bruce"));
+                clubs.Add(new ClubModel("Politics Club", 639, 12, "Club for individuals to talk about current politics.", "Sorin"));
+                clubs.Add(new ClubModel("Travel Club", 032, 50, "Club for those who love to travel.", "Jen"));
+                clubs.Add(new ClubModel("Sports Club", 322, 45, "Club to talk everything sports.", "Sharon"));
+                clubs.Add(new ClubModel("Comedy Club", 509, 80, "Club to share some laughs", "Mack"));
+            }
         }
 
         public List<ClubModel> getAllClubs()
@@ -31,10 +34,10 @@ namespace StudentClubMVCUnit4.Models
 
         public ClubModel AddNewClub(string name, int id, int capacity, string description, string president)
         {
-            List<ClubModel> newClub = new List<ClubModel>();
-            newClub.Add(new ClubModel(name, id, capacity, description, president));
+            ClubModel newClub = new ClubModel(name, id, capacity, description, president);
+            clubs.Add(newClub);
 
-            return ;
+            return newClub;
         }
     }
 }
